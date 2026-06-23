@@ -10,12 +10,21 @@ const resultsContainer = document.getElementById('resultsContainer');
 const watchlistContainer = document.getElementById('watchlistContainer');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
+const movieDetailContainer= document.getElementById('movieDetails');
 
 searchButton.addEventListener("click", () => {
         currentSearch = searchInput.value;
         currentPage = 1;
         searchMovies(currentSearch);
     });
+
+searchInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        currentSearch = searchInput.value;
+        currentPage = 1;
+        searchMovies(currentSearch);
+    }   
+})
 
 //next button
 nextBtn.addEventListener("click", (e) => {
